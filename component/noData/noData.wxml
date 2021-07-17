@@ -1,0 +1,9 @@
+
+<template name='noData'>
+ <view  class='template_noData'>
+    <view class='template_noData_view'>
+      <image class='template_noData_img' src='/img/publicModule/noData.png' />
+    </view>
+    <view class='template_noData_title'>{{title}}</view>
+  </view>
+</template>

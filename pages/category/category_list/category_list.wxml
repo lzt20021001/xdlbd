@@ -1,0 +1,31 @@
+<import src="../../../component/noMoreData/noMoreData.wxml" />
+<import src="../../../component/noData/noData.wxml" />
+<view wx:if='{{categorylist.length > 0 }}'>
+<view class="goods_item" >
+  <scroll-view scroll-y style="height: {{scrollHeight}}rpx;" scroll-into-view="{{toView}}" bindscrolltolower="scrollBottom" lower-threshold='30' >
+  <view  wx:for="{{categorylist}}" wx:key="id" class="goods_info_wrap">
+  <view  class="goods_id">
+     <label class="leftlabel">id</label><text class="righttext">{{item.id}}</text> 
+   </view>
+  <view class="goods_name">
+    <label class="leftlabel" >名称</label><text class="righttext">{{item.categoryName}}</text> 
+  </view>
+  <view class="goods_name">
+    <label class="leftlabel" >排序</label><text class="righttext">{{item.sortOrder}}</text> 
+  </view>
+  <view class="goods_name">
+    <label class="leftlabel" >状态</label><text class="righttext">{{item.status}}</text> 
+  </view>
+  <view  class="disline">
+    <button data-id="{{item.id}}" class="mini-btn " type="primary" size="mini" bindtap="goEdit">编辑</button>
+  <button data-id="{{item.id}}" class="mini-btn" type="default" size="mini" bindtap="goDel">删除</button> 
+  </view>
+
+   </view>
+  </scroll-view>
+</view> 
+</view>
+<view wx:else>
+  <view class='line'></view>
+  <template is='noData' data='{{title:"暂无数据" }}' />
+</view>

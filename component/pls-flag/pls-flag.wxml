@@ -1,0 +1,3 @@
+<template name="plsFlag">
+  <view class='item-type {{color}}'>{{value}}</view>
+</template>

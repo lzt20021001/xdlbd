@@ -1,0 +1,14 @@
+<view class='content'>
+  <image class="imglogin" src="../../img/login/小电驴.png"></image>
+  <view class="u1">账号</view>
+  <view class="ux">
+      <view class="ux001">
+        <input class="username" bindblur="getuser"></input>  
+        <image class="imgwrong" src="../../img/login/wrong.png" bindtap="clearuser"/>
+      </view>
+</view>
+  <view class="p1">密码</view>
+   <input class="password" password="true" bindblur="getpass"></input>
+  <button style="width:100%;" class="btnlogin" bindtap="login">登录</button>
+  <view class="t3">功能说明：</view>
+</view>

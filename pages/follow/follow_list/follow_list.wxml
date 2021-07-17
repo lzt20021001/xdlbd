@@ -1,0 +1,42 @@
+<import src="../../../component/noMoreData/noMoreData.wxml" />
+<import src="../../../component/noData/noData.wxml" />
+<view class="dirsearch">
+<input class="search" bindblur="search" value="{{storeId}}" placeholder="搜索"/>
+<view  class="sai" bindtap="goSearch">筛选</view>
+</view>
+
+<view wx:if='{{followlist.length > 0 }}'>
+  <view class="goods_item">
+    <scroll-view scroll-y style="height: {{scrollHeight}}rpx;" scroll-into-view="{{toView}}"
+      bindscrolltolower="scrollBottom" lower-threshold='30'>
+      <navigator url="/pages/store/store_view/store_view?id={{item.storeId}}" wx:for="{{followlist}}" wx:key="id"
+        class="goods_info_wrap">
+       
+        <view class="goods_name">
+          <label class="leftlabel">名称id</label><text class="righttext">{{item.storeId}}</text>
+        </view>
+        <view class="goods_id">
+          <label class="leftlabel">跟进时间</label><text class="righttext">{{item.followUpTime}}</text>
+        </view>
+        <view class="goods_name">
+          <label class="leftlabel">BD归属</label><text class="righttext">{{item.belongToId}}</text>
+        </view>
+        <view class="goods_name">
+          <label class="leftlabel">联系人</label><text class="righttext">{{item.contactsName}}</text>
+        </view>
+        <view class="goods_name">
+          <label class="leftlabel">运营状态</label>          
+          <text class="righttext">{{item.storeBusinessStatus}}</text>
+        </view>
+        <view class="goods_name">
+          <label class="leftlabel">拜访记录</label>          
+          <text class="righttext">{{item.followUpContent}}</text>
+        </view>
+      </navigator>
+    </scroll-view>
+  </view>
+</view>
+<view wx:else>
+  <view class='line'></view>
+  <template is='noData' data='{{title:"暂无数据" }}' />
+</view>

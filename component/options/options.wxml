@@ -1,0 +1,15 @@
+<template name='options'>
+  <view class="options_section">
+    <picker bindchange="bindPickerChange" value="{{index}}"   range="{{data}}" range-key="{{value}}" data-type='{{sign}}'>
+      <view class="options_picker">
+        <view class='options_select_text'>
+        <!-- > 5 ? data[number][value].substring(0,4) : data[number][value]  -->
+         {{data[number][value] }}
+        </view>
+        <view class='options_select_text'>
+          <image class='options_select_img' src='/img/publicModule/pull_down1.png'></image>
+        </view>
+      </view>  
+    </picker>  
+  </view>
+</template>

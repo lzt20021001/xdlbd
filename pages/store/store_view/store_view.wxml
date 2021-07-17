@@ -1,0 +1,115 @@
+<import src="../../../component/noMoreData/noMoreData.wxml" />
+<import src="../../../component/noData/noData.wxml" />
+<view class='line'></view>
+<Tabs tabs="{{tabs}}" binditemChange="handleItemChange">
+
+  <block wx:if="{{tabs[0].isActive}}">
+    <view class='line'></view>
+    <view class="goods_name">
+      <label class="leftlabel">店铺名称</label><text class="righttext">{{storeId}}{{storeName}}</text>
+    </view>
+    <view class="goods_id">
+      <label class="leftlabel">服务项目</label><text class="righttext">{{services}}</text>
+    </view>
+    <view class="goods_name">
+      <label class="leftlabel">有效状态</label>
+      <text class="righttext">{{status===0?'有效客户':'无效客户'}}</text>
+    </view>
+    <view class="goods_id">
+      <label class="leftlabel">联系人</label><text class="righttext">{{contactsName}}</text>
+    </view>
+    <view class="goods_id">
+      <label class="leftlabel">联系人电话</label><text class="righttext">{{contactsPhone}}</text>
+    </view>
+    <view class="goods_id">
+      <label class="leftlabel">所在区域</label><text class="righttext">{{province+city+region}}</text>
+    </view>
+    <view class="goods_id">
+      <label class="leftlabel">详细地址</label><text class="righttext">{{detailAddress}}</text>
+    </view>
+    <view class="goods_id">
+      <label class="leftlabel">签约状态</label>
+      <text class="righttext">{{signStatus===0?'已签约':'未签约'}}</text>
+    </view>
+    <view class="goods_id">
+      <label class="leftlabel">营业时间</label>
+      <text class="righttext">{{openStartTime}}-{{openEndTime}}</text>
+    </view>
+    <view class="goods_id">
+      <label class="leftlabel">商户号</label>
+      <text class="righttext">{{mchId}}</text>
+    </view>
+    <view class="goods_id">
+      <label class="leftlabel">门头照片</label>
+      <image class="logo" src="{{storeHeadPhoto}}" bindtap="preHeadView"></image>
+    </view>
+    <view class="goods_id">
+      <label class="leftlabel">店铺照片</label>
+      <view wx:for="{{images}}" wx:key="id">
+        <image class="logo" src="{{item.storeImage}}"  bindtap="preStrView"></image>
+      </view>
+    </view>
+    <view class="goods_id">
+      <label class="leftlabel">营业执照</label>
+      <image class="logo" src="{{businessLicense}}"  bindtap="preLicView"></image>
+    </view>
+    <view class="btnline">
+      <button data-id="{{id}}" class="mini-btn " type="primary" size="mini" bindtap="goEdit">编辑</button>
+      <button data-id="{{id}}" class="mini-btn" type="default" size="mini" bindtap="goCancel">标记无效</button>
+    </view>
+
+
+  </block>
+  <block wx:elif="{{tabs[1].isActive}}">
+    <view class='line'></view>
+  
+      <navigator url="/pages/storeCust/storecust_edit/storecust_edit?id={{item.id}}" wx:for="{{linklist}}" wx:key="id"
+      class="goods_info_wrap">
+      <view class="goods_name">
+        <label class="leftlabel">联系人姓名</label><text class="righttext">{{item.customerName}}</text>
+      </view>
+      <view class="goods_id">
+        <label class="leftlabel">联系方式</label><text class="righttext">{{item.customerPhone}}</text>
+      </view>
+
+      <view class="btnline">
+      <button data-id="{{item.id}}" class="mini-btn " type="primary" size="mini" bindtap="golinkEdit">编辑</button>
+      <button data-id="{{item.id}}" class="mini-btn" type="default" size="mini" bindtap="golinkDel">删除</button>
+      </view>
+    </navigator>
+    <button data-storeinfo="{{id}},{{storeName}}" bindtap="golinkNew" type="primary" size="default">新增联系人</button>
+  </block>
+  <block wx:else>
+    <view class='line'></view>
+    <navigator url="/pages/follow/follow_edit/follow_edit={{item.id}}" wx:for="{{followlist}}" wx:key="id"
+      class="goods_info_wrap">
+      <view class="goods_name">
+          <label class="leftlabel">名称id</label><text class="righttext">{{item.storeId}}</text>
+        </view>
+        <view class="goods_id">
+          <label class="leftlabel">跟进时间</label><text class="righttext">{{item.followUpTime}}</text>
+        </view>
+        <view class="goods_name">
+          <label class="leftlabel">BD归属</label><text class="righttext">{{item.belongToId}}</text>
+        </view>
+        <view class="goods_name">
+          <label class="leftlabel">联系人</label><text class="righttext">{{item.contactsName}}</text>
+        </view>
+        <view class="goods_name">
+          <label class="leftlabel">运营状态</label>          
+          <text class="righttext">{{item.storeBusinessStatus}}</text>
+        </view>
+        <view class="goods_name">
+          <label class="leftlabel">拜访记录</label>          
+          <text class="righttext">{{item.followUpContent}}</text>
+        </view>
+
+      <view class="btnline">
+      <button data-id="{{item.id}}" class="mini-btn " type="primary" size="mini" bindtap="gofollowEdit">编辑</button>
+      <button data-id="{{item.id}}" class="mini-btn" type="default" size="mini" bindtap="gofollowDel">删除</button>
+      </view>
+    </navigator>
+    <button data-storeinfo="{{id}},{{storeName}}" bindtap="gofollowNew" type="primary" size="default">新增跟进记录</button>
+  </block>
+
+</Tabs>

@@ -1,0 +1,58 @@
+<view class='line'></view>
+<form bindsubmit="submitform" bindreset="resetform">
+  <view class="inputvalue">
+    <label class="leftlabel">客户名称ID</label>
+    <label class="righttext">{{storeId}}{{storeName}}</label>
+  </view>
+<view class="section">
+  <picker mode="date" value="{{followDate}}"  bindchange="followDateChange">
+    <view class="picker">
+      跟进日期 {{followDate}}
+    </view>
+  </picker>
+</view> 
+<view class="section">
+  <picker mode="time" value="{{followTime}}"  bindchange="followTimeChange">
+    <view class="picker">
+      跟进时间 {{followTime}}
+    </view>
+  </picker>
+</view> 
+<view class="section">
+  <picker mode="selector" range="{{linkTypeitems}}" value="{{index}}"  bindchange="linktypeChange">
+    <view class="picker">
+      沟通方式 {{linkTypeitems[followUpType]}}
+    </view>
+  </picker>
+</view>
+
+<view class="section">
+  <picker mode="selector" range="{{linklist}}" value="{{index}}"  bindchange="linkmanChange">
+    <view class="picker">
+    联系人{{linklist[linkman]}}
+    </view>
+  </picker>
+</view>
+<view class="section">
+  <picker mode="selector" range="{{followStatusitems}}" value="{{index}}"  bindchange="followstatusChange">
+    <view class="picker">
+    跟进状态{{followStatusitems[followUpStatus]}}
+    </view>
+  </picker>
+</view>
+
+  <view class="inputvalue">
+    <label class="leftlabel">跟进记录</label>
+    <input class="righttext" name='followUpContent' auto-height value='{{followUpContent}}' bindblur="recordChange"> </input>
+  </view>
+  <view class="section">
+  <picker mode="selector" range="{{storestatusitems}}" value="{{index}}"  bindchange="storeStatusChange">
+    <view class="picker">
+    运营状态{{storestatusitems[storeBusinessStatus]}}
+    </view>
+  </picker>
+</view>
+
+  <button  type="primary" size="mini" form-type="submit">提交</button>
+  <button  size="mini" form-type="reset">取消</button>
+</form>

@@ -1,0 +1,15 @@
+<!--pages/fileup/fileup.wxml-->
+<view>
+  <label>categoryImage{{categoryImage}}</label>
+</view>
+
+
+<view class="fb_tool">
+    <label>图片</label>
+    <button size="mini" bindtap="handleChooseImg">+</button>
+    <UpImg  wx:if="{{!categoryImage==''}}" src="{{categoryImage}}" class="up_img_item" bindtap="handleRemoveImg" />
+  </view>
+
+  <view>
+    <label>upfile{{upfile}}</label>
+</view>

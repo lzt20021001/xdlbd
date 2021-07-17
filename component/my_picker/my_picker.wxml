@@ -1,0 +1,18 @@
+<view class="free-dialog {{ showDialog ? 'free-dialog--show' : '' }}">
+  <view class="free-dialog__mask">
+    <view class="free-dialog__container">
+      <view class="free-btn-wrappper">
+        <view catchtap='freetoBack' class="free-button free-dialog-reset">取消</view>
+        <view catchtap='freetoBack' class="free-button free-dialog-submit">确定</view>
+      </view>
+      <view class="create-wrapper">
+        <view>
+          尚未创建联系人
+        </view>
+        <view>
+          <button type="primary" size="default"  catchtap='goCreate'>去创建</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

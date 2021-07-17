@@ -1,0 +1,46 @@
+
+<view>{{user.userName}}</view>
+<view class="line" />
+<view class="disline">
+  <block class="cell">
+    <image bindtap="goAddStore" class="img" src="/img/index/new_add.png" mode="aspectFit"></image>
+    <view>新增店铺</view>
+  </block>
+  <block class="cell">
+    <image bindtap="goStorelist" class="img" src="/img/index/new_add.png" mode="aspectFit"></image>
+    <view>店铺列表</view>
+  </block>
+  <block class="cell">
+    <image bindtap="goAddCate" class="img" src="/img/index/new_add.png" mode="aspectFit"></image>
+    <view>新增分类</view>
+  </block>
+</view>
+<view  class="disline">
+  <block class="cell">
+    <image bindtap="goCatelist" class="img" src="/img/index/new_add.png" mode="aspectFit"></image>
+    <view>分类列表</view>
+  </block>
+  <block class="cell">
+    <image bindtap="goAddbrand" class="img" src="/img/index/new_add.png" mode="aspectFit"></image>
+    <view>新增品牌</view>
+  </block>
+  <block class="cell">
+    <image bindtap="goBrandlist" class="img" src="/img/index/new_add.png" mode="aspectFit"></image>
+    <view>品牌列表</view>
+  </block>
+</view>
+
+<view  class="disline">
+  <block class="cell">
+    <image bindtap="gofollowlist" class="img" src="/img/index/new_add.png" mode="aspectFit"></image>
+    <view>跟进记录</view>
+  </block>
+  <block class="cell">
+    
+  </block>
+  <block class="cell">
+ 
+  </block>
+</view>
+
+

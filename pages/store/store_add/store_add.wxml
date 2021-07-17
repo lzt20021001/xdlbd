@@ -1,0 +1,79 @@
+<view class='line'></view>
+<form bindsubmit="submitform" bindreset="resetform">
+  <view class="inputvalue">
+    <label class="leftlabel">客户名称</label>
+    <input class="righttext" name='storeName' auto-height value='{{storeName}}' bindblur="storeNameChange">
+    </input>
+  </view>
+
+  <view>
+  <label class="leftlabel"> 服务内容</label>
+   <checkbox-group class="checkbox-group" bindchange="servicesChange">
+    <checkbox class="radio" wx:for-items="{{seitems}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+      <text>{{item.value}}</text>
+    </checkbox>
+  </checkbox-group>
+</view>
+<view class="inputvalue">
+    <label class="leftlabel">联系人</label>
+    <input class="righttext" name='contactsName' auto-height value='{{contactsName}}' bindblur="contactsNameChange">
+    </input>
+  </view>
+  <view class="inputvalue">
+    <label class="leftlabel">联系人电话</label>
+    <input class="righttext" name='contactsPhone' auto-height value='{{contactsPhone}}' bindblur="contactsPhoneChange">
+    </input>
+  </view>
+  <view >
+    <picker mode="region" bindchange="bindRegionChange" value="{{province}},{{city}},{{region}}" >
+    <view class="righttext"> 省市区{{province}}{{city}}{{region}}</view>
+  </picker>
+</view>
+  <view class="inputvalue">
+    <label class="leftlabel">详细地址</label>
+    <input class="righttext" name='detailAddress' auto-height value='{{detailAddress}}' bindblur="detailAddressChange">
+    </input>
+  </view>
+  <view class="section">
+  <picker mode="time" value="{{openStartTimeStr}}" start="00:01" end="12:00" bindchange="bindTimePreChange">
+    <view class="picker">
+      营业时间 {{openStartTimeStr}}
+    </view>
+  </picker>
+  <picker mode="time" value="{{openEndTimeStr}}" start="12:01" end="23:59" bindchange="bindTimeEndChange">
+    <view class="picker">
+      - {{openEndTimeStr}}
+    </view>
+  </picker>
+</view>
+<view>
+ <label class="leftlabel">签约状态</label>
+ <radio-group class="radio-group" bindchange="statusChange">
+    <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.name}}" checked="{{signStatus==item.name?true:false}}">
+      <text>{{item.value}}</text>
+    </radio>
+  </radio-group>
+</view>
+<view class="inputvalue">
+    <label class="leftlabel">签约商户号</label>
+    <input class="righttext" name='mchId' auto-height value='{{mchId}}' bindblur="mchIdChange">
+    </input>
+  </view>
+<view class="fb_tool">
+    <label>门头照片</label>
+    <button size="mini" bindtap="handleChooseHeadImg">+</button>
+    <UpImg  wx:if="{{!storeHeadPhoto==''}}" src="{{storeHeadPhoto}}" class="up_img_item" bindtap="handleRemoveHeadImg" />
+  </view>
+<view class="fb_tool">
+    <label>店铺照片</label>
+    <button size="mini" bindtap="handleChooseStoImg">+</button>
+    <UpImg  wx:if="{{!storeImages==''}}" src="{{storeImages}}" class="up_img_item" bindtap="handleRemoveStoImg" />
+  </view>
+  <view class="fb_tool">
+    <label>营业执照</label>
+    <button size="mini" bindtap="handleChooseLiImg">+</button>
+    <UpImg  wx:if="{{!businessLicense==''}}" src="{{businessLicense}}" class="up_img_item" bindtap="handleRemoveLiImg" />
+  </view>
+  <button  type="primary" size="mini" form-type="submit">提交</button>
+  <button  size="mini" form-type="reset">取消</button>
+</form>

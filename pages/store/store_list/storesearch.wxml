@@ -1,0 +1,15 @@
+<form bindsubmit="submitform" bindreset="resetform">
+
+  <view >
+    <picker mode="region" name='address' bindchange="bindRegionChange" value="{{province}},{{city}},{{region}}" >
+    <view class="righttext">所在区域{{province}}{{city}}{{region}}</view>
+  </picker>
+</view>
+  <view class="inputvalue">
+    <label class="leftlabel">签约状态</label>
+    <input class="righttext" name='signStatus' auto-height value='{{signStatus}}' bindblur="signStatusChange">
+    </input>
+  </view>
+  <button  type="primary" size="default" form-type="submit">确定</button>
+  <button  size="default" form-type="reset">重置</button>
+</form>

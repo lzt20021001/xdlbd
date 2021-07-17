@@ -1,0 +1,66 @@
+.goods_info_wrap {
+  display: flex;
+  flex-direction: column; 
+  
+}
+.inputvalue {
+  display: flex;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  color: black;
+  border-bottom: 1px solid #ccc;
+}
+
+
+.leftlabel
+{
+   flex: 1;
+   padding:5rpx;
+   justify-content: center;
+}
+
+.righttext
+{
+  flex: 4;
+ 
+   justify-content: center;
+}
+.radio{
+  flex:1;
+}
+
+.ckbtn{
+  display: flex;
+}
+
+
+
+.line{
+  width: 100%;
+  padding-top:5rpx;
+  border-bottom: 2px solid #ccc;
+}
+
+
+.fb_tool {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 30rpx;
+}
+ .fb_tool button {
+  margin: 0;
+  width: 90;
+  height: 90rpx;
+  font-size: 60rpx;
+  padding: 0;
+  display: flex;
+  border: solid 1rpx currentColor;
+  justify-content: center;
+  align-items: center;
+  color: #ccc;
+}
+.fb_tool .up_img_item {
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+

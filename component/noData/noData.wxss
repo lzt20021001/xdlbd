@@ -1,0 +1,20 @@
+.template_noData{
+  width: 100%;
+}
+.template_noData .template_noData_view{
+  width: 300rpx;
+  height: 251rpx;
+  margin:150rpx auto 0;
+}
+.template_noData_view .template_noData_img{
+  width: 300rpx;
+  height: 251rpx;
+}
+.template_noData_title{ 
+  text-align: center;
+  width: 100%;
+  font-size:26rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}

@@ -1,0 +1,18 @@
+.item-type{
+  height:36rpx;
+  line-height:36rpx;
+  text-align: center;
+  border-radius:4rpx 10rpx 4rpx 10rpx;
+  font-size:20rpx;
+  padding:0 20rpx; 
+  color:rgba(255,255,255,1);
+}
+.item-type.green{
+  background: #28D893;
+}
+.item-type.yellow{
+  background: #FFBE57;
+}
+.item-type.red{
+  background: #FF4D6A;
+}

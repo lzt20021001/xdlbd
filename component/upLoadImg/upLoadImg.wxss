@@ -1,0 +1,64 @@
+.upLoadImg_photos{
+  width:100%;
+  padding:39rpx 30rpx 40rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid  rgba(230, 230, 230, 1)
+}
+.upLoadImg_title{
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+}
+.upLoadImg_title>text:last-child{
+  font-size: 26rpx;
+}
+
+.upLoadImg_selectImgs{
+  display: flex;
+  flex-wrap:wrap;
+  width: 100%;
+}
+.upLoadImg_box{
+  width:140rpx;
+  height:140rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  margin:39rpx 42rpx 0 0;
+  text-align: center;
+  border: 2rpx solid #f5f5f5;
+  position: relative;
+  border-radius:25rpx;
+}
+.upLoadImg_box:nth-of-type(4n),.upLoadImg_chooseBox{
+  margin:39rpx  0 0 !important;
+}
+.upLoadImg_missionImg{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius:25rpx;
+}
+.upLoadImg_chooseImage{
+  width: 140rpx;
+  height:140rpx;
+  line-height: 130rpx;
+  border: 2rpx dashed #E1E1E6;
+  box-sizing: border-box;
+  font-size: 50rpx;
+  text-align: center;
+  margin:39rpx  0 0;
+  color: #E1E1E6;
+  border-radius:25rpx;
+}
+.upLoadImg_delImg{
+  width: 30rpx;
+  height: 30rpx;
+  right:-15rpx;
+  top:-15rpx;
+  position: absolute;
+}
+.titleColor{
+  font-size:32rpx;
+  font-weight:500;
+  color:#F7517F
+}

@@ -1,0 +1,23 @@
+/* pages/store/store_list/storesearch.wxss */
+.inputvalue {
+  display: flex;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  color: black;
+  border-bottom: 1px solid #ccc;
+}
+
+
+.leftlabel
+{
+   flex: 1;
+   padding:5rpx;
+   justify-content: center;
+}
+
+.righttext
+{
+  flex: 4;
+ 
+   justify-content: center;
+}

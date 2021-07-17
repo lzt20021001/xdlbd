@@ -1,0 +1,139 @@
+page {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  height: 680rpx;
+  width: 622rpx;
+  text-align: left;
+  margin-top: 119rpx;
+}
+
+
+.imglogin {
+  width: 186rpx;
+  height: 48rpx;
+  margin-bottom:120rpx;
+  }
+
+.u1 {
+  width: 32px;
+  height: 22px;
+  font-size: 16px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: #333333;
+  line-height: 22px;
+  margin-bottom: 10rpx;
+}
+
+
+/* 开始 */
+.ux{
+  display: flex;
+  width: 311px;
+  height: 35px;
+  align-items: left;
+}
+
+.ux001{
+  display: flex;
+  width: 288px;
+  height: 40px;
+  border: 1px solid #DBDBDB;
+}
+
+.username {
+  flex: 1;
+  font-size: 30rpx;
+  }
+
+.imgwrong{ 
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 5rpx;
+  margin-top: 35rpx;
+}
+
+/* 结束 */
+
+
+.p1 {
+width: 32px;
+height: 22px;
+font-size: 16px;
+font-family: PingFangSC-Medium, PingFang SC;
+font-weight: 500;
+color: #333333;
+line-height: 22px;
+margin-top: 10rpx;
+
+}
+
+.password {
+width: 288px;
+height: 40px;
+background: #FFFFFF;
+border-radius: 2px;
+border: 1px solid #DBDBDB;
+}
+
+.btnlogin {
+  height: 42px;
+  background: linear-gradient(140deg, #FFA225 0%, #FF6910 100%);
+  border-radius: 4px;
+  margin-top: 100rpx;
+
+}
+
+.t3 {
+  text-align: left;
+  margin-top: 10rpx;
+}
+button{
+width: 32px;
+height: 22px;
+font-size: 16px;
+font-family: PingFangSC-Medium, PingFang SC;
+font-weight: 500;
+color: #FFFFFF;
+line-height: 22px;
+}
+
+/* input嵌入小图标方式 */
+/* view.search {
+  display: flex;
+  flex-direction: row;
+  height: 98rpx;
+  background: #efeff4;
+  align-items: center;
+  border: 1px solid #5e1add;
+
+}
+
+view.searchItem {
+  display: flex;
+  width: 100%;
+  background: #fff;
+  flex-direction: row;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+  border: 1px solid #2fdf72;
+}
+
+view.searchItem image {
+  height: 42rpx;
+  width: 42rpx;
+  align-self: center;
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+}
+
+view.searchItem input {
+  flex: 1;
+  font-size: 30rpx;
+}  */

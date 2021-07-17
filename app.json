@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/login/login",
+    "pages/category/category_add/category_add",
+    "pages/category/category_list/category_list",
+    "pages/category/category_edit/category_edit",
+    "pages/brand/brand_list/brand_list",
+    "pages/brand/brand_add/brand_add",
+    "pages/brand/brand_edit/brand_edit",
+    "pages/store/store_list/store_list",
+    "pages/store/store_view/store_view",
+    "pages/store/store_edit/store_edit",
+    "pages/store/store_add/store_add",
+    "pages/storeCust/storecust_edit/storecust_edit",
+    "pages/storeCust/storecust_add/storecust_add",
+    "pages/fileup/fileup",
+    "pages/store/store_list/storesearch",
+    "pages/follow/follow_list/follow_list",
+    "pages/follow/follow_list/followsearch",
+    "pages/follow/follow_edit/follow_edit",
+    "pages/follow/follow_add/follow_add"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

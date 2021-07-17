@@ -1,0 +1,24 @@
+/* pages/fileup/fileup.wxss */
+
+.fb_tool {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 30rpx;
+}
+ .fb_tool button {
+  margin: 0;
+  width: 90;
+  height: 90rpx;
+  font-size: 60rpx;
+  padding: 0;
+  display: flex;
+  border: solid 1rpx currentColor;
+  justify-content: center;
+  align-items: center;
+  color: #ccc;
+}
+.fb_tool .up_img_item {
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+

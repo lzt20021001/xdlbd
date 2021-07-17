@@ -1,0 +1,109 @@
+<template name='pickerList'>
+  <view class='list'>
+
+      <view class='list_title'>
+        <text class='titleColor' wx:if='{{!isShow}}'>*</text>
+        <text>{{title}}</text>
+      </view>
+
+      <!-- 下拉选择 -->
+      <view class='list_picker' wx:if='{{sign == 1}}'>
+        <picker bindchange="{{click}}"  range="{{rangeData}}" range-key="{{rangeKey}}"  data-type='{{dataType}}' data-index='{{dataIndex}}'>
+          <view>
+            <input class='list_input' placeholder-class='input_holder' placeholder='{{placeholder}}'  value='{{checkedValue}}' disabled='true'/>
+             <input name='{{dataType_name}}' value='{{nameValue}}' class='getName' />
+            <image class='selImg' src='/img/publicModule/btn_right.png'></image>
+          </view> 
+        </picker>
+      </view>
+      <!-- 下拉选择受理人 -->
+      <!-- <view class='list_picker' wx:if='{{sign == 12}}'>
+        <view>
+          <view catchtap="{{onMyPicker}}">
+            <input class='list_input' placeholder-class='input_holder' placeholder='{{placeholder}}' value='{{checkedValue}}' disabled='true'/>
+            <input name='{{dataType_name}}' value='{{nameValue}}' class='getName' />
+            <image class='selImg' src='/img/publicModule/btn_right.png'></image>
+          </view> 
+        </view> 
+      </view> -->
+      <!-- 下拉选择,联系人 -->
+      <!-- <view wx:if="{{rangeData.length>0}}"> -->
+      <view class='list_picker' wx:if='{{sign == 11}}'>
+        <view>
+          <view catchtap="{{onMyPicker}}">
+            <input class='list_input' placeholder-class='input_holder' placeholder='{{placeholder}}' value='{{checkedValue}}' disabled='true'/>
+            <input name='{{dataType_name}}' value='{{nameValue}}' class='getName' />
+            <image class='selImg' src='/img/publicModule/btn_right.png'></image>
+          </view> 
+          <myPicker wx:if="{{myPickerShow}}" bind:clickEvent="{{clickEvent}}" bind:goCreate="{{goCreate}}"></myPicker>
+        </view> 
+      </view>
+
+      <!-- 输入框 -->
+      <view class='list_picker_input' catchtap='{{bindtap}}' wx:if='{{sign == 2}}'>
+        <input class='list_input {{cname}}' placeholder-class='input_holder' placeholder='{{placeholder}}'  data-type='{{dataType}}' data-index="{{dataIndex}}" maxlength='{{maxlength || -1}}' value='{{value}}' name='{{dataType}}' type='{{inputType}}' catchinput='{{bindinput}}' catchfocus='{{bindfocus}}' bindblur='{{bindblur}}' />
+      </view>
+
+      <view class='list_picker_input' catchtap='{{bindtap}}' wx:if='{{sign == 9}}'>
+        <input class='list_input' placeholder-class='input_holder' placeholder='{{placeholder}}'  data-type='{{dataType}}' maxlength='{{maxlength || -1}}' value='{{value}}'  type='{{inputType}}' catchinput='{{bindinput}}' catchfocus='{{bindfocus}}' bindblur='{{bindblur}}' />
+      </view>
+
+      <!-- 选择地址 -->
+      <view class='list_address' wx:if='{{sign == 3}}' bindtap='{{onclick}}'  data-lat='{{lat}}' data-lng="{{lng}}">
+        <view class='address {{filler ? "" : "input_holder"}}'>{{filler || placeholder}}</view>
+        <image class='icon_img' src="/img/publicModule/address.png"></image>
+      </view>
+
+      <!-- 展示框 -->
+      <view class='list_picker_input' wx:if='{{sign == 4}}' >
+        <input class='showStyle' value="{{showName || '/'}}" name='{{name}}' disabled='true' />
+      </view>
+
+      <!-- 时间选择框 -->
+      <view class='list_picker' wx:if='{{sign == 5}}' >
+        <picker bindchange="{{click}}" mode="date" start='2017-01-01' end='{{endTime}}'   data-type='{{dataType}}' >
+          <view>
+            <input class='list_input' name='{{dataType}}' placeholder-class='input_holder' placeholder='{{placeholder}}' value='{{checkedValue}}'  disabled='true'/>
+            <image class='selImg' src='/img/publicModule/btn_right.png'></image>
+          </view> 
+        </picker>
+      </view>
+
+      <!-- 单选框 -->
+      <view class="process" wx:if='{{sign == 6}}'>
+        <view class='process_sel'> </view>
+        <block wx:for="{{data}}" wx:key="{{index}}">
+          <view class='process_sel}}' data-index='{{index}}'  bindtap='btnSeleterFlow'  data-sign="{{dataIndex}}" data-type='{{type_name}}'>
+          <image class='sel' src='{{key == index ? "/img/publicModule/is_show.png" : "/img/publicModule/no_show.png"}}' />
+          <text>{{data[index]}}</text>
+          <input name='{{type_name}}' value='{{key}}' class='getName' />
+         </view>
+        </block>
+      </view>
+
+      <!-- 选择地址 -->
+      <view class='list_address' wx:if='{{sign == 7}}' bindtap='{{onclick}}'>
+        <view class='address {{filler ? "" : "input_holder"}} {{blueColor ? "blueColor" : ""}}'>{{filler || placeholder}}</view>
+        <image class='selImg' src='/img/publicModule/btn_right.png'></image>
+      </view> 
+
+
+      <view class='list_picker_btn' wx:if='{{sign == 8}}' catchtap="{{onclick || ''}}">
+        <input class='showStyle {{imgtype && "pad"}}' placeholder-class='input_holder' data-type='{{dataType}}' bindtap='{{bindtap}}' placeholder='{{placeholder}}' value="{{value || ''}}"  disabled='true' />
+          <input name='{{dataType_name}}' maxlength='-1' value='{{nameValue}}' class='getName' />
+        <image class='selImg' wx:if="{{!imgtype}}" src='/img/publicModule/btn_right.png' />
+        <image class='search' wx:else src='/img/followModule/opportunity/search.png' />
+      </view>
+
+      <!-- 有placeholder的展示框 -->
+      <view class='list_picker_input' wx:if='{{sign == 9}}' >
+        <input wx:if="{{!showName}}" class='showStyle' style="color:rgba(153,153,153,1)" value="请先选择客户地址" name='{{name}}' disabled='true'/>
+        <input wx:else class='showStyle' value="{{showName || '/'}}" name='{{name}}' disabled='true'/>
+      </view>
+
+
+  </view>
+
+
+</template>
+

@@ -1,2 +1,0 @@
-# xdlbd
-lzt bd sample

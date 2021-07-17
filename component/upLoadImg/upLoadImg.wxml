@@ -1,0 +1,20 @@
+<template name='upLoadImg'>
+  <view class='upLoadImg_photos'>  
+    <view class='upLoadImg_title'> 
+    <text class='titleColor' wx:if='{{!isShow}}'>*</text>
+      <text class="up-title">{{title}}</text> 
+      <text wx:if='{{sign != 1 && !hiddeTip}}'> (请上传原图)</text> 
+      <text class="desc" wx:if='{{sign != 1 && desc}}'>{{desc}}</text> 
+    </view>
+    <view class='upLoadImg_selectImgs'>
+      <block wx:for="{{data}}" wx:key="index">
+        <view class="upLoadImg_box" data-index="{{index}}" data-type='{{type}}' bindtap='previewImage' >
+          <image class='upLoadImg_missionImg' src='{{item.url || item}}'></image>
+          <image class='upLoadImg_delImg' wx:if='{{sign != 1}}' catchtap='delImg' src='/img/publicModule/icon_del.png' data-index="{{index}}" data-type='{{type}}'></image>
+        </view>
+      </block>
+      <view wx:if='{{sign != 1 && data.length < imgLength}}' bindtap='chooseImage'  class='upLoadImg_chooseImage {{(data.length-1) % 4 == 0 ? "upLoadImg_chooseBox" : ""}}' data-type='{{type}}'>+</view>
+    
+    </view>   
+  </view>
+</template>

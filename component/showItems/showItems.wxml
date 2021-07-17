@@ -1,0 +1,49 @@
+<template name='showItems'>
+  <view wx:if='{{isShow == 1}}' class='showItems_content' >
+    <view class='isShow'><text>{{key}}</text><text wx:if='{{sex}}'>{{'('+ sex +')'}}</text></view>
+    <view>{{value || '/'}}</view>
+  </view>
+
+  <view wx:elif='{{isShow == 2}}' class='showItems_btn' >
+    <view bindtap='{{bindtap}}' data-index='{{id}}' data-type='1'>编辑</view>
+    <view></view>
+    <view bindtap='{{bindtap}}' data-index='{{id}}' data-type='0'>删除</view>
+  </view>
+  <view wx:elif='{{isShow == 3}}' class='showItems_content'>
+    <view>
+      {{key}}
+    </view>
+    <view style="display: flex;justify-content: flex-end;align-items: center">
+      <view class="slot-style {{greenColor ? 'slot-style-green' : ''}}">{{slot}}</view>
+      <view>{{value}}</view>
+    </view>
+  </view>
+  <view wx:elif='{{isShow == 4}}' class='showItems_content_minheight'>
+    <view style="flex-basis: 100rpx">
+      {{key}}
+    </view>
+    <view>{{value || '/'}}</view>
+  </view>
+
+  <view wx:else class='showItems_content' >
+    <view>{{key}}</view>
+    <view wx:if='{{sign == 1}}' data-index='{{index}}'  data-type='{{type}}'   bindtap='{{bindtap}}' class='setPadding1'>{{value || '/'}}</view>
+
+    <view wx:elif='{{sign == 2 }}'  data-index='{{index}}' class='{{isCall == 1 ? "setPadding2" : ""}}'>{{value || '/'}}</view>
+
+    <view wx:elif='{{sign == 3 }}' class='setPadding3'>
+      <text>{{value}}</text>
+      <text bindtap='view_log'>审核记录>></text>
+      <text></text>
+    </view>
+    <view wx:elif='{{sign == 4 }}' data-shopid="{{shopid}}" data-stu="{{stu}}" bindtap='view_detail' class='setPadding4'>
+      <text>{{value}}</text>
+      <text> ></text>
+    </view>
+    <view wx:elif='{{sign == 5 }}' bindtap='tapValue' data-type="{{type}}" data-id1="{{id1}}" data-id2="{{id2}}">{{value || '/'}}</view>
+    <view wx:else style="{{style}}">{{value || '/'}}</view>
+
+    <image wx:if='{{sign == 1}}' class='showItems_selImg' src='/img/publicModule/btn_right.png'></image>
+    <image wx:if='{{sign == 2 && isCall == 1}}' data-index='{{index}}' bindtap='{{bindtap}}' class='showItems_phone' src='/img/publicModule/btn_phone.png'></image>
+  </view>
+</template>

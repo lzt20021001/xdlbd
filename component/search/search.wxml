@@ -1,0 +1,25 @@
+<template name='search'>
+  <view class='search'>
+    <input bindfocus="focusInput" focus="{{focus}}" placeholder='{{placeholder || "请输入客户名称"}}' placeholder-class='search_place' bindinput='searchInput' value='{{keyword}}' confirm-type='search' bindconfirm='bindSearch' bindblur="bindblur"/>
+    <!-- <view class="search_del_img" catchtap="deleteInputVal">
+      <image wx:if="{{isShowDelImg}}" src='/img/icon-search-del.png'></image>
+    </view> -->
+    <image class='search_img' src='/img/followModule/opportunity/search.png'></image>
+    <view class='delKeywordview' bindtap='delKeyword' wx:if='{{keyword}}'>
+      <image class='delKeyword_img' class="image" src='/img/followModule/opportunity/delKeyword.png'></image>
+    </view>
+  </view>
+  <view class='screen {{isHideImg ? "screenW": ""}}' bindtap='{{ bindtap  || "selection"}}' wx:if='{{sign == 1}}'>
+    筛选
+    <image wx:if="{{!isHideImg}}" class="image" src='/img/publicModule/selecter.png'></image>
+  </view>
+  <view class='screen trigger' bindtap='{{ bindtap || "selection"}}'  wx:if='{{sign == 2}}'>
+    {{(flag != "cancel") ? '切换' :'取消'}}
+    <image src='/img/index/trigger.png' wx:if='{{flag != "cancel"}}'></image>
+  </view>
+  <view class='screen fx-center high-screen' bindtap='{{ bindtap  || "selection"}}' wx:if='{{sign == 3}}'>
+    <image class="high-image" src='/img/publicModule/selecter-risk.png'></image>
+    {{ text }}个
+  </view>
+ 
+</template>

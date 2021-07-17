@@ -1,0 +1,44 @@
+<view class='line'></view>
+<form bindsubmit="submitform" bindreset="resetform">
+  <view class="inputvalue">
+    <label class="leftlabel">客户名称ID</label>
+    <label class="righttext">{{storeId}}{{storeName}}</label>
+  </view>
+  <view class="inputvalue">
+    <label class="leftlabel">姓名</label>
+    <input class="righttext" name='customerName' auto-height value='{{customerName}}' bindblur="customerNameChange">
+    </input>
+  </view>
+  <radio-group class="radio-group" bindchange="sexChange">
+    <label>性别</label>
+    <radio class="radio" wx:for-items="{{sexitems}}" wx:key="name" value="{{item.name}}" checked="{{sex==item.name?true:false}}">
+      <text>{{item.value}}</text>
+    </radio>
+  </radio-group>
+
+  <view class="inputvalue">
+    <label class="leftlabel">联系电话</label>
+    <input class="righttext" name='customerPhone' auto-height value='{{customerPhone}}' bindblur="customerPhoneChange"> </input>
+  </view>
+  <view class="inputvalue">
+    <label class="leftlabel">微信</label>
+    <input class="righttext" name='wechatCode' auto-height value='{{wechatCode}}' bindblur="wechatCodeChange"> </input>
+  </view>
+  <view class="inputvalue">
+    <label class="leftlabel">职务</label>
+    <input class="righttext" name='job' auto-height value='{{job}}' bindblur="jobChange"> </input>
+  </view>
+  <view class="inputvalue">
+    <label class="leftlabel">管理权限</label>
+    <input class="righttext" name='permission' auto-height value='{{permission}}' bindblur="permissionChange"> </input>
+  </view>
+  <radio-group class="radio-group" bindchange="kpChange">
+    <label>是否KP</label>
+    <radio class="radio" wx:for-items="{{kpitems}}" wx:key="name" value="{{item.name}}" checked="{{isKp==item.name?true:false}}">
+      <text>{{item.value}}</text>
+    </radio>
+  </radio-group>
+  <button  type="primary" size="mini" form-type="submit">提交</button>
+  <button  size="mini" form-type="reset">取消</button>
+</form>
+<label>{{upfile}}</label>

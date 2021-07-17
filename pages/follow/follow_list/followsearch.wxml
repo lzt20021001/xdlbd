@@ -1,0 +1,25 @@
+<form bindsubmit="submitform" bindreset="resetform">
+
+<view >
+  <picker mode="region" name='address' bindchange="bindRegionChange" value="{{province}},{{city}},{{region}}" >
+  <view class="righttext">所在区域{{province}}{{city}}{{region}}</view>
+</picker>
+</view>
+<view class="inputvalue">
+  <label class="leftlabel">签约状态</label>
+  <input class="righttext" name='followUpStatus' auto-height value='{{followUpStatus}}' bindblur="followStatusChange">
+  </input>
+</view>
+<view class="inputvalue">
+  <label class="leftlabel">bd归属</label>
+  <input class="righttext" name='belongToId' auto-height value='{{belongToId}}' bindblur="belongChange">
+  </input>
+</view>
+<view class="inputvalue">
+  <label class="leftlabel">沟通方式</label>
+  <input class="righttext" name='followUpType' auto-height value='{{followUpType}}' bindblur="followTypeChange">
+  </input>
+</view>
+<button  type="primary" size="default" form-type="submit">确定</button>
+<button  size="default" form-type="reset">重置</button>
+</form>

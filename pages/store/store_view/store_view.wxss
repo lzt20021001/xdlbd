@@ -1,0 +1,50 @@
+.goods_info_wrap {
+  display: flex;
+  flex-direction: column; 
+  
+}
+.goods_name {
+
+  display: flex;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  color: black;
+  border-bottom: 1px solid #ccc;
+}
+
+ .goods_id {
+  display: flex;
+  padding-top: 10rpx;
+  color: black;
+  padding-bottom: 10rpx;
+}
+.leftlabel
+{
+   flex: 1;
+   padding:5rpx;
+   justify-content: center;
+}
+
+.righttext
+{
+  flex: 4;
+ 
+   justify-content: center;
+}
+
+.btnline{
+  display: flex;
+}
+
+
+
+.line{
+  width: 100%;
+  padding-top:5rpx;
+  border-bottom: 2px solid #ccc;
+}
+
+.logo{
+  width: 100rpx;
+  height: 100rpx;
+}

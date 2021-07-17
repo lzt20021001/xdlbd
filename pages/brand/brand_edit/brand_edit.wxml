@@ -1,0 +1,31 @@
+<view class='line'></view>
+
+<form bindsubmit="submitform" bindreset="resetform">
+  <view class="inputvalue">
+    <label class="leftlabel">名称</label>
+    <input class="righttext" name='brandName' auto-height value='{{brandName}}' bindblur="brandNameChange">
+    </input>
+  </view>
+
+  <view class="inputvalue">
+    <label class="leftlabel">序号</label>
+    <input class="righttext" name='sortOrder' auto-height value='{{sortOrder}}' bindblur="sortOrderChange"> </input>
+  </view>
+
+  <radio-group class="radio-group" bindchange="statusChange">
+    <label>启用状态</label>
+    <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.name}}" checked="{{status==item.name?true:false}}">
+      <text>{{item.value}}</text>
+    </radio>
+  </radio-group>
+
+
+  <view class="fb_tool">
+    <label>图片</label>
+    <button size="mini" bindtap="handleChooseImg">+</button>
+
+    <UpImg wx:if="{{!brandImage==''}}" src="{{brandImage}}" class="up_img_item" bindtap="handleRemoveImg" />
+  </view>
+  <button type="primary" size="mini" form-type="submit">提交</button>
+  <button size="mini" form-type="reset">取消</button>
+</form>

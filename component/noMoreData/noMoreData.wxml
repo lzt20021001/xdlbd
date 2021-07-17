@@ -1,0 +1,13 @@
+<template name='noMoreData'>
+  <view class='noMoreData_hint' wx:if='{{flag && dataLength > length}}'>
+    <view><text></text></view>
+    <view>我也是有底线哒</view>
+    <view>
+      <text></text> 
+      <view class='noMoreData_goTop' bindtap='go_back_top'>
+        <image src='/img/publicModule/go_back_top.png'></image>
+      </view>
+    </view>
+  </view>
+ 
+</template>
